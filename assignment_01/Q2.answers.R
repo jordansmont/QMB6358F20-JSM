@@ -161,7 +161,7 @@ multiples(25)
 
 
 #--------------------------------------------------------------------------------
-# Example 5 - Using for and while loops for counting even numbers
+# Example 5 - Using for loop for counting even numbers
 #--------------------------------------------------------------------------------
 
 end_num <- 13
@@ -199,14 +199,6 @@ even_numbers(24)
 # I feel like there should be a simpler way to do the for loop above.
 # I'm confident with my answers above but could you please recommend any suggestions
 # for simplification if you notice anywhere I can include them?
-
-# Code using while loop
-end_num <- 13
-count_even_numbers <- 0
-while (i < end_num) {if(i %% 2 == 0) count_even_numbers = count_even_numbers + 1
-  else count_even_numbers = count_even_numbers}
-print(count_even_numbers)
-
 
 
 #--------------------------------------------------------------------------------

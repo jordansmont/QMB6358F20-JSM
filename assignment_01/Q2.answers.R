@@ -1,17 +1,15 @@
-NEED TO EDIT - BELOW IS A COPY OF DR. MORIN'S FILE 
-
 ################################################################################
 #
 # QMB 6358: Software Tools for Business Analytics
 # Assignment 1, Question 2:
 # Drafting Code for Functions
 #
-# Name:
+# Name: JORDAN MONTGOMERY
 # Executive Development Center
 # College of Business Administration
 # University of Central Florida
 #
-# Date:
+# Date: 8/31/2020
 #
 ################################################################################
 #
@@ -39,7 +37,7 @@ num_2 <- 6
 
 
 # Code goes here:
-product_out <- NA
+product_out <- num_1 * num_2
 
 print(product_out)
 

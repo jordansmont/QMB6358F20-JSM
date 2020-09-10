@@ -40,19 +40,35 @@
 # First function: Sum of squared deviations
 #--------------------------------------------------------------------------------
 
-# Function definition goes here.
+### NOT USING A FOR LOOP
 
+### x is a vector of numbers provided by user
+
+### mu is a mean provided by user
+
+sum_sq_dev <- function(x,mu) {return  
+  sum((x - mu)^2)}
+
+sum_sq_dev(x,mu)
 
 
 #--------------------------------------------------------------------------------
 # Second function: Covariance between two variables
 #--------------------------------------------------------------------------------
 
-# Function definition goes here.
+### NOT USING A FOR LOOP
 
 
+covar_y_x <- function(x,y) {
+  x_hat <- sum(x) / length(x)
+  y_hat <- sum(y) / length(y)
+  sum((y-y_hat)*(x-x_hat))*(1/length(x))}
 
+### TEST
 
+covar_y_x(x,y)
+
+cov(x,y)
 
 ################################################################################
 # End

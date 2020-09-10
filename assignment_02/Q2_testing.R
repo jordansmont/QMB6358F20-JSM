@@ -4,11 +4,11 @@
 # QMB 6358: Software Tools for Business Analytics
 # Testing a Library of R Functions
 #
-# Name:
+# Name: Jordan Montgomery
 # College of Business Administration
 # University of Central Florida
 #
-# Date:
+# Date: 9/10/2020
 #
 ################################################################################
 #

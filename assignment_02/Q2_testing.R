@@ -1,4 +1,3 @@
-
 ################################################################################
 #
 # QMB 6358: Software Tools for Business Analytics
@@ -32,8 +31,8 @@
 # install.packages("package_name_goes_here")
 
 # Set working directory, if calling from another location.
-# wd_path <- '~/path/to/your/repo/assignment_02'
-# setwd(wd_path)
+wd_path <- "~/UCF/QMB6358/HW/Assignment 2"
+setwd(wd_path)
 
 
 # Load your source code for the library of functions.
@@ -56,7 +55,17 @@ print(sum_sq_dev(x = c(0, 0, 0), mu = 0) == 0)
 
 # Add more examples.
 
+print(sum_sq_dev(x = c(4, 6, 13), mu = 5))
 
+print(sum_sq_dev(x = c(4, 6, 13), mu = 5) == 9)
+
+print(sum_sq_dev(x = c(8, 5, 3), mu = 8))
+
+print(sum_sq_dev(x = c(8, 5, 3), mu = 8) == 34)
+
+print(sum_sq_dev(x = c(1, 75, 9), mu = 18))
+
+print(sum_sq_dev(x = c(1, 75, 9), mu = 18) == 6)
 
 
 
@@ -69,8 +78,18 @@ print(covar_y_x(y = c(0, 0, 0), x = c(0, 0, 0)) == 0)
 
 # Add more examples.
 
+print(covar_y_x(y = c(2, 7, 9), x = c(15, 27, 3)))
 
+print(covar_y_x(y = c(2, 7, 9), x = c(15, 27, 3)) == -8)
 
+print(covar_y_x(y = c(0, 5, 110), x = c(7, 370, 44)))
+
+print(covar_y_x(y = c(0, 5, 110), x = c(7, 370, 44)) == 0)
+
+print(covar_y_x(y = c(11, 0, 6), x = c(8, 3, 93)))
+
+print(covar_y_x(y = c(11, 0, 6), x = c(8, 3, 93)) == 36)
+  
 
 print("Q1 library testing complete.")
 

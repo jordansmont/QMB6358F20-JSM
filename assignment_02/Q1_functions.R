@@ -49,8 +49,7 @@
 sum_sq_dev <- function(x,mu) {return  
   sum((x - mu)^2)}
 
-sum_sq_dev(x,mu)
-
+### sum_sq_dev(x,mu)
 
 #--------------------------------------------------------------------------------
 # Second function: Covariance between two variables
@@ -66,9 +65,9 @@ covar_y_x <- function(x,y) {
 
 ### TEST
 
-covar_y_x(x,y)
+### covar_y_x(x,y)
 
-cov(x,y)
+### cov()
 
 ################################################################################
 # End

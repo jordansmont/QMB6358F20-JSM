@@ -45,6 +45,10 @@ source("Q1_functions.R")
 # Testing Functions
 ################################################################################
 
+# All these test cases are correctly written,
+# except maybe some of the values are incorrect. 
+# Work them out on paper or with a calculator. 
+# We will see when we test it. 
 
 print("Testing function sum_sq_dev:")
 
@@ -56,8 +60,9 @@ print(sum_sq_dev(x = c(0, 0, 0), mu = 0) == 0)
 # Add more examples.
 
 print(sum_sq_dev(x = c(4, 6, 13), mu = 5))
-
+# Check: 1^2 + 1^2 + 8^2 = ?
 print(sum_sq_dev(x = c(4, 6, 13), mu = 5) == 9)
+# Some changes needed for the test values but all else is good here.
 
 print(sum_sq_dev(x = c(8, 5, 3), mu = 8))
 

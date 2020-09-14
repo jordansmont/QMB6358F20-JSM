@@ -46,8 +46,10 @@
 
 ### mu is a mean provided by user
 
-sum_sq_dev <- function(x,mu) {return  
-  sum((x - mu)^2)}
+# Your function is correct but I like the following form for clarity:
+sum_sq_dev <- function(x,mu) {
+  return(sum((x - mu)^2))
+}
 
 ### sum_sq_dev(x,mu)
 
@@ -57,11 +59,12 @@ sum_sq_dev <- function(x,mu) {return
 
 ### NOT USING A FOR LOOP
 
-
+# This is good:
 covar_y_x <- function(x,y) {
   x_hat <- sum(x) / length(x)
   y_hat <- sum(y) / length(y)
-  sum((y-y_hat)*(x-x_hat))*(1/length(x))}
+  sum((y-y_hat)*(x-x_hat))*(1/length(x))
+}
 
 ### TEST
 

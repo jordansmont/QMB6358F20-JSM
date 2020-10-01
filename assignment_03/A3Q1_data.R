@@ -4,11 +4,11 @@
 # QMB 6358: Software Tools for Business Analytics
 # Assignment 3: Data Handling
 #
-# Name:
+# Name: Jordan Montgomery
 # College of Business
 # University of Central Florida
 #
-# Date:
+# Date: 9/25/2020
 #
 ################################################################################
 #
@@ -32,7 +32,7 @@ rm(list=ls(all=TRUE))
 
 # Set working directory to the path containing the csv files.
 # wd_path <- "/path/to/your/folder
-wd_path <- "C:/Users/le279259/Documents/Teaching/QMB6358_Fall_2020/Assignments/assignment_03/A3_iris_data/QMB6358-iris"
+wd_path <- "C:/Users/jorda/OneDrive/Documents/UCF/QMB6358/QMB6358-iris"
 setwd(wd_path)
 
 
@@ -45,6 +45,17 @@ setwd(wd_path)
 # Reading data from csv files.
 ################################################################################
 
+#1a
+
+files_with_iris <- list.files(path = wd_path,
+                           pattern = "iris")
+
+for (file_name in files_with_iris) {
+  
+  print(file_name)
+  
+}
+
 
 
 # Loop through the number of files in the dataset.
@@ -52,24 +63,28 @@ setwd(wd_path)
 num_files <- 100
 
 # Initialize with an empty object.
-A3Q1_data <- NULL
+A3Q1_data <- read.table(file = paste("iris_", file_num, '.txt', sep = ""))
+
 for (file_num in 1:num_files) {
+  A3Q1_data <- read.table(file = paste("iris_", file_num, '.txt', sep = ""))
 
   # Set the filename.
+  file_name <- paste('iris_', file_num, '.txt', sep = "")
 
   # A3Q1a) Print filename.
+  print(file_name)
 
   # Read this file to a temporary data frame.
-
+  A3Q1_data_sample <- read.table(file = paste('iris_', file_num, '.txt', sep = ""))
 
   # A3Q1b) Print table of counts by species (to test file reading).
   # print(table(A3Q1_data_sample[, 6], useNA = 'ifany'))
+  print(table(A3Q1_data_sample[,6]))
 
   # Append this file to the full dataset.
-
+  A3Q1_data <- rbind(A3Q1_data_sample, A3Q1_data)
 
 }
-
 
 ################################################################################
 # Testing dataset from Question 1
@@ -80,7 +95,9 @@ print("Contents of Dataset for Question 1:")
 
 # Print some statistics about the full dataset
 # to verify the content.
-print("Dimensions of dataset:")
+
+summary(A3Q1_data_sample)
+
 print(dim(A3Q1_data))
 
 

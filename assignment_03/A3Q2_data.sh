@@ -5,11 +5,11 @@
 # QMB 6358: Software Tools for Business Analytics
 # Shell Script for Creating Datasets in Assignment 3, Question 2
 #
-# Name:
+# Name: Jordan Montgomery
 # College of Business
 # University of Central Florida
 #
-# Date:
+# Date: 10/1/2020
 #
 ################################################################################
 #
@@ -31,7 +31,7 @@
 # e.g. making directory for output, etc.
 echo "Running test of Assignment 3..."
 
-
+pwd /c/Users/jorda/OneDrive/Documents/UCF/QMB6358/QMB6358-iris
 
 ################################################################################
 # Question 2: Assemble the data in UNIX

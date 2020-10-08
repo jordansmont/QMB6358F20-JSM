@@ -4,11 +4,11 @@
 # QMB 6358: Software Tools for Business Analytics
 # Assignment 3: Data Handling
 #
-# Name:
+# Name: Jordan Montgomery
 # College of Business
 # University of Central Florida
 #
-# Date:
+# Date: 10/8/2020
 #
 ################################################################################
 #
@@ -33,8 +33,8 @@ rm(list=ls(all=TRUE))
 
 # Set working directory to the path containing the csv files.
 # wd_path <- "/path/to/your/folder
-# wd_path <- "C:/Users/le279259/Documents/Teaching/QMB6358_Fall_2020/Assignments/assignment_03/A3_iris_data/QMB6358-iris"
-# setwd(wd_path)
+wd_path <- "C:/Users/jorda/OneDrive/Documents/UCF/QMB6358/QMB6358-iris"
+setwd(wd_path)
 
 
 # Set paths to other folders.
@@ -47,21 +47,18 @@ rm(list=ls(all=TRUE))
 ################################################################################
 
 
-print("Contents of Dataset for Question 2a):")
+A3Q2a_data <- read.table(file = "A3Q2a.full.csv")
 
-# Read in the dataset.
+print(A3Q2a_data)
 
-# Copy the commands from Question 1 to print out results.
-
-
-print("Contents of Dataset for Question 2b):")
-
-# Read in the dataset.
-
-# Copy the commands from Question 1 to print out results.
+summary(A3Q2a_data)
 
 
+A3Q2b_data <- read.table(file = "A3Q2b.full.csv")
 
+print(A3Q2b_data)
+
+summary(A3Q2b_data)
 
 ################################################################################
 # End

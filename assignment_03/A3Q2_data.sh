@@ -56,7 +56,7 @@ do
 
     # Insert a cat command here, reading in the numbered dataset
     # and appending it to the full dataset A3Q2a_full.csv:
-
+    cat iris_FILE_NUM.txt >> A3Q2afull.txt
 
 done
 

@@ -9,7 +9,7 @@
 # College of Business
 # University of Central Florida
 #
-# Date: 10/1/2020
+# Date: 10/8/2020
 #
 ################################################################################
 #
@@ -71,7 +71,9 @@ echo "Running commands for Question 2b)..."
 
 # Insert a cat command here, reading in all numbered datasets
 # and writing to the full dataset A3Q2b_full.csv.
-# One-line command goes here:
+# One-line command goes here: 
+
+cat iris_*.txt >> A3Q2b.full.csv
 
 
 echo "Completed command for Question 2b)."

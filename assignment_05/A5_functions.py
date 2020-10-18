@@ -1,11 +1,42 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
 """
-Created on Fri Oct 16 02:46:13 2020
+##################################################
+#
+# QMB 6358: Software Tools for Business Analytics
+#
+# Sample script for Assignment 5
+#
+# Name: Jordan Montgomery
+# College of Business Administration
+# University of Central Florida
+#
+# Date: 10/18/2020
+#
+#
+##################################################
+"""
 
-@author: Jordan
-"""
-###############################
+
+
+
+##################################################
+# Import Modules.
+##################################################
+
+# These are common modules that are often useful.
+import numpy as np
+import math
+
+
+##################################################
 # Question 1
+##################################################
+
+
+#--------------------------------------------------
+# Example 1
+#--------------------------------------------------
+
 def letter_grade(num):
     if num >=93:
         print('A')
@@ -31,46 +62,30 @@ def letter_grade(num):
         print('D-')
     if num <60:
         print('F')
-        
-        
-letter_grade(5)
-letter_grade(65)
-letter_grade(75)
-letter_grade(85)
-letter_grade(95)
-letter_grade(105)
-letter_grade(-5)
 
 
-###############################
-# Question 2
+#--------------------------------------------------
+# Example 2
+#--------------------------------------------------
+
 def path_to_data_file(path,prefix,file_num,extension):
     print(path + prefix + "_" + file_num + "." + extension)
-    
+ 
 
-path_to_data_file('~/QMB6358F20/QMB6358F20_iris/','iris','1','txt')
-path_to_data_file('~/UCF/QMB6358','test_doc','7','csv')
-path_to_data_file('~/Documents/Career/','Resume','v3','doc')
-path_to_data_file('~/STA5735/datasets/','populations_of_the_world','','xlsx')
+#--------------------------------------------------
+# Example 3
+#--------------------------------------------------
 
-
-###############################
-# Question 3
 def cyl_vol(height,radius):
     import math
     pi = math.pi 
     print(height*pi*radius*radius)
-    
-    
-cyl_vol(10,3)
-cyl_vol(0,3)
-cyl_vol(10,3.5)
-import math
-cyl_vol((1/math.pi),4)
 
 
-###############################
-# Question 4
+#--------------------------------------------------
+# Example 4
+#--------------------------------------------------
+
 def number_of_vowels(string_in):
     count = 0
     for i in string_in:
@@ -95,13 +110,61 @@ def number_of_vowels(string_in):
         if i == 'U':
             count = count + 1
     print(count)
-        
 
-number_of_vowels('test')
-# 1
-number_of_vowels('teat')
-# 2
-number_of_vowels('teAchEr')
-# 3
-number_of_vowels('I am an excellent coder')
-# 8
+
+##################################################
+# Question 2
+##################################################
+
+
+def main():
+
+    
+    #--------------------------------------------------
+    # Example 1
+    #--------------------------------------------------
+
+    print(letter_grade(-5))
+    print(letter_grade(5))
+    print(letter_grade(85.9))
+    print(letter_grade(105))
+        
+    #--------------------------------------------------
+    # Example 2
+    #--------------------------------------------------
+    
+    print(path_to_data_file('~/QMB6358F20/QMB6358F20_iris/','iris','1','txt'))
+    print(path_to_data_file('~/UCF/QMB6358','test_doc','7','csv'))
+    print(path_to_data_file('~/Documents/Career/','Resume','v3','doc'))
+    print(path_to_data_file('~/STA5735/datasets/','populations_of_the_world','','xlsx'))
+
+        
+        
+    #--------------------------------------------------
+    # Example 3
+    #--------------------------------------------------
+    
+    
+    print(cyl_vol(10,3))
+    print(cyl_vol(0,3))
+    print(cyl_vol(10,3.5))
+    print(cyl_vol((1/math.pi),4))
+    
+    #--------------------------------------------------
+    # Example 4
+    #--------------------------------------------------
+    
+    print(number_of_vowels('test'))
+    print(number_of_vowels('teat'))
+    print(number_of_vowels('teAchEr'))
+    print(number_of_vowels('I am an excellent coder'))
+    
+    
+if __name__== '__main__':
+    main()
+  
+  
+  
+##################################################
+# End.
+##################################################

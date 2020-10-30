@@ -24,7 +24,7 @@
 ##################################################
 
 # These are common modules that are often useful.
-import numpy as np
+# import numpy as np
 import math
 
 
@@ -39,29 +39,29 @@ import math
 
 def letter_grade(num):
     if num >=93:
-        print('A')
+        return('A')
     if num <93 and num >=90:
-        print('A-')
+        return('A-')
     if num <90 and num >=87:
-        print('B+')
+        return('B+')
     if num <87 and num >=83:
-        print('B')
+        return('B')
     if num <83 and num >=80:
-        print('B-')
+        return('B-')
     if num <80 and num >=77:
-        print('C+')
+        return('C+')
     if num <77 and num >=73:
-        print('C')
+        return('C')
     if num <73 and num >=70:
-        print('C-')
+        return('C-')
     if num <70 and num >=67:
-        print('D+')
+        return('D+')
     if num <67 and num >=63:
-        print('D')
+        return('D')
     if num <63 and num >=60:
-        print('D-')
+        return('D-')
     if num <60:
-        print('F')
+        return('F')
 
 
 #--------------------------------------------------
@@ -69,7 +69,7 @@ def letter_grade(num):
 #--------------------------------------------------
 
 def path_to_data_file(path,prefix,file_num,extension):
-    print(path + prefix + "_" + file_num + "." + extension)
+    return(path + prefix + "_" + file_num + "." + extension)
  
 
 #--------------------------------------------------
@@ -79,7 +79,7 @@ def path_to_data_file(path,prefix,file_num,extension):
 def cyl_vol(height,radius):
     import math
     pi = math.pi 
-    print(height*pi*radius*radius)
+    return(height*pi*radius*radius)
 
 
 #--------------------------------------------------
@@ -109,7 +109,7 @@ def number_of_vowels(string_in):
             count = count + 1
         if i == 'U':
             count = count + 1
-    print(count)
+    return(count)
 
 
 ##################################################

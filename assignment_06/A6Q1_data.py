@@ -60,14 +60,14 @@ for filename in files:
     print(filename)
 
 
-# 1b
+# 1b)
 
 
 
+
+# 1c)
 
 housing_full = pd.read_csv('housing_data/housing_data_1.csv')
-
-
 
 # Use a for loop to bind additional datasets to housing_full.
 # Code goes here.
@@ -83,7 +83,7 @@ housing_full.describe()
 
 
 ##################################################
-# Fit the Regression Model
+# 1d) Fit the Regression Model
 ##################################################
 
 # After the full dataset is obtained:

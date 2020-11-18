@@ -3,14 +3,22 @@ Question 1B
 Calculate the highest bid for each auction and store with the associated Auction ID, winning Bid ID and Bidder ID
 */
 
+.open AuctionsDatabase.db
+
+.mode column
+.headers on
+.output HighestBid02.out
+
 SELECT
-AUCTIONS.AUCTIONID,
-MAX(BIDS.BID) AS HIGHESTBID,
-BIDS.BIDID,
-BIDS.BIDDERID
-FROM
-AUCTIONS AS AUCTIONS
-INNER JOIN BIDS AS BIDS
+BIDS.AUCTIONID AS AUCTIONID,
+AUCTIONS.DATE AS DATE,
+BIDS.BIDDERID AS BIDDERID,
+MAX(BIDS.BID) AS HIGHESTBID
+FROM BIDS
+INNER JOIN AUCTIONS
 ON AUCTIONS.AUCTIONID = BIDS.AUCTIONID
+
 GROUP BY
-AUCTIONS.AUCTIONID;
+BIDS.AUCTIONID;
+
+.output stdout

@@ -3,6 +3,12 @@ Question 1D
 Calculate TotalRevenue by fiscal quarter (YYYYQX, ie 2019Q4)
 */
 
+.open AuctionsDatabase.db
+
+.mode column
+.header on
+.output TotalRevenue02.out
+
 SELECT
 AUCTIONS.AUCTIONID,
 AUCTIONS.DATE,
@@ -28,3 +34,5 @@ FROM(
 SELECT
 QUARTER
 TOTAL REVENUE
+
+.output stdout

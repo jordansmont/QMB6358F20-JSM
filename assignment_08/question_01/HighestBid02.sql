@@ -1,0 +1,16 @@
+/*
+Question 1B
+Calculate the highest bid for each auction and store with the associated Auction ID, winning Bid ID and Bidder ID
+*/
+
+SELECT
+AUCTIONS.AUCTIONID,
+MAX(BIDS.BID) AS HIGHESTBID,
+BIDS.BIDID,
+BIDS.BIDDERID
+FROM
+AUCTIONS AS AUCTIONS
+INNER JOIN BIDS AS BIDS
+ON AUCTIONS.AUCTIONID = BIDS.AUCTIONID
+GROUP BY
+AUCTIONS.AUCTIONID;

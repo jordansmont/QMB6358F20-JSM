@@ -1,21 +1,26 @@
 /*
 Question 3C
 Show name, NID, and GPA of full time students who also work
+
+Adding Department and Job Title just for reference. In a real world situation, I'm sure the requestor of this report would want to know where they work and what they do.
 */
+
+.mode column
+.header on
+.output FT_Student_Employees.out
 
 SELECT
-studentregister.FirstName,
-studentregister.LastName,
-studentregister.NID,
-studentregister.GPA,
-employees.Job_Title
+StudentRegister.FirstName,
+StudentRegister.LastName,
+StudentRegister.NID,
+Employees.Department,
+Employees.Job_Title,
+StudentRegister.GPA
 FROM
-(SELECT * FROM studentregister WHERE Status = 'Full time') AS StudentRegister
+StudentRegister
 INNER JOIN
-employees as Employees
-ON studentregister.NID = employees.NID
+Employees
+ON StudentRegister.NID = Employees.NID
+WHERE StudentRegister.Status = 'Full time';
 
-/*
-I stumbled upon this producing what was asked. However I realize there are other ways to filter.
-I will adjust later to filter appropriately so I won't need Job_Title in the table.
-*/
+.output stdout

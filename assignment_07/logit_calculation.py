@@ -221,7 +221,7 @@ beta_0 = np.zeros(len(logit_model_fit_sm.params))
 
 
 # Complete this command:
-soln_grad = optimize.root( ,beta_0)
+soln_grad = optimize.root(logit_gradient, beta_0, (y,X))
 
 
 # Check the results:
@@ -237,6 +237,18 @@ print(soln_grad.fun)
 print(logit_gradient(soln_grad.x, y, X))
 # Is it close to zero?
 
+"""
+YEP, THIS VECTOR CAME OUT PRETTY CLOSE TO ZERO AS WELL:
+ 
+Intercept   -5.200310e-09
+AA           3.348433e-11
+A           -3.728992e-09
+B           -3.223344e-09
+C            1.068980e-09
+D            5.678662e-10
+
+"""
+    
 
 ##################################################
 # Optimize the Likelihood Function
@@ -256,7 +268,9 @@ beta_0 = np.zeros(len(logit_model_fit_sm.params))
 
 
 # Complete this command:
-soln_nm = minimize(...)
+soln_nm = minimize(logit_likelihood, beta_0, (y,X), 
+                   method = 'nelder-mead',
+                   options = {'xtol': 1e-8,'maxiter':1000,'disp':True})
 
 
 # Check the results:
@@ -270,6 +284,28 @@ print(logit_model_fit_sm.params)
 print(soln_nm.fun)
 print(logit_likelihood(soln_nm.x, y, X))
 
+
+"""
+Maximum number of iterations has been exceeded.
+
+print(soln_nm.x)
+[-2.58889198  0.10921435 -0.52217451  0.75695017  0.2612048   0.34089986]
+
+print(logit_model_fit_sm.params)
+Intercept   -1.598568
+AA          -2.972700
+A           -2.025773
+B           -2.208094
+C           -1.273111
+D           -0.888651
+
+print(soln_nm.fun)
+672.4543469420857
+
+print(logit_likelihood(soln_nm.x, y, X))
+672.454346942
+
+"""
 
 
 #--------------------------------------------------
@@ -285,7 +321,9 @@ beta_0 = np.zeros(len(logit_model_fit_sm.params))
 
 
 # Complete this command:
-soln_dfp = minimize(...)
+soln_dfp = minimize(logit_likelihood, beta_0, (y,X), 
+                   method = 'powell',
+                   options = {'xtol': 1e-8,'maxiter':1000,'disp':True})
 
 
 # Check the results:
@@ -299,7 +337,29 @@ print(logit_model_fit_sm.params)
 print(soln_dfp.fun)
 print(logit_likelihood(soln_dfp.x, y, X))
 
+"""
+Optimization terminated successfully.
+         Current function value: 593.021591
+         Iterations: 4
+         Function evaluations: 430
 
+print(soln_dfp.x)
+[-1.59433579 -2.96550874 -2.02094748 -2.20281342 -1.2701672  -0.88666711]
+
+print(logit_model_fit_sm.params)
+Intercept   -1.598568
+AA          -2.972700
+A           -2.025773
+B           -2.208094
+C           -1.273111
+D           -0.888651
+
+print(soln_dfp.fun)
+593.0215913625455
+
+print(logit_likelihood(soln_dfp.x, y, X))
+593.021591363
+"""
 
 #--------------------------------------------------
 # Broyden-Fletcher-Goldfarb-Shanno algorithm (BFGS)
@@ -314,7 +374,9 @@ beta_0 = np.zeros(len(logit_model_fit_sm.params))
 
 
 # Complete this command:
-soln_bfgs = minimize(...)
+soln_bfgs = minimize(logit_likelihood, beta_0, (y,X), 
+                   method = 'BFGS',
+                   options = {'disp':True})
 
 
 # Check the results:
@@ -328,8 +390,30 @@ print(logit_model_fit_sm.params)
 print(soln_bfgs.fun)
 print(logit_likelihood(soln_bfgs.x, y, X))
 
+"""
+Warning: Desired error not necessarily achieved due to precision loss.
+         Current function value: 593.018833
+         Iterations: 39
+         Function evaluations: 353
+         Gradient evaluations: 44
 
+print(soln_bfgs.x)
+[-1.59856769 -2.97269766 -2.02577164 -2.20809511 -1.27311004 -0.88865028]
 
+print(logit_model_fit_sm.params)
+Intercept   -1.598568
+AA          -2.972700
+A           -2.025773
+B           -2.208094
+C           -1.273111
+D           -0.888651
+
+print(soln_bfgs.fun)
+593.01883287
+
+print(logit_likelihood(soln_bfgs.x, y, X))
+593.01883287
+"""
 
 
 #--------------------------------------------------
@@ -346,7 +430,9 @@ beta_0 = np.zeros(len(logit_model_fit_sm.params))
 
 
 # Complete this command:
-soln_bfgs_jac = minimize(...)
+soln_bfgs_jac = minimize(logit_likelihood, beta_0, (y,X), 
+                   method = 'BFGS', jac=logit_gradient,
+                   options = {'disp':True})
 
 
 
@@ -361,7 +447,31 @@ print(logit_model_fit_sm.params)
 print(soln_bfgs_jac.fun)
 print(logit_likelihood(soln_bfgs_jac.x, y, X))
 
+"""
+Optimization terminated successfully.
+         Current function value: 593.018833
+         Iterations: 30
+         Function evaluations: 32
+         Gradient evaluations: 32
 
+print(soln_bfgs_jac.x)
+[-1.5985683  -2.97270046 -2.0257728  -2.20809424 -1.27311127 -0.88865058]
+
+print(logit_model_fit_sm.params)
+Intercept   -1.598568
+AA          -2.972700
+A           -2.025773
+B           -2.208094
+C           -1.273111
+D           -0.888651
+dtype: float64
+
+print(soln_bfgs_jac.fun)
+593.01883287
+
+print(logit_likelihood(soln_bfgs_jac.x, y, X))
+593.01883287
+"""
 
 
 

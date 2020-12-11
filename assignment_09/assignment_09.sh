@@ -46,7 +46,7 @@ echo ""
 echo "Running data wrangling, analysis, and modeling in R..."
 echo ""
 
-Rscript Final_Exam.R > Final_Exam.out
+Rscript assignment_09.R > assignment_09.out
 
 echo ""
 echo "Finished working in R."

@@ -9,11 +9,11 @@
 # College of Business
 # University of Central Florida
 #
-# Due Date: 12/6/2020
+# Date: 12/10/2020
 #
 ################################################################################
 #
-# This shell script reads a dataset, summarizes the data, plots figures
+# This shell script reads the datasets, summarizes the data, plots figures
 #   and estimates a regression model. It creates files to collect these
 #   results in a document built by LaTeX.
 #
@@ -32,7 +32,7 @@
 
 echo "##################################################"
 echo ""
-echo "Running my Business Analytics Term Project..."
+echo "Running my Business Analytics Final Exam..."
 echo ""
 
 ################################################################################
@@ -43,47 +43,22 @@ export PATH='/c/Program Files/R/R-3.6.1/bin'
 
 echo "#-------------------------------------------------"
 echo ""
-echo "Running data wrangling and modeling in R..."
+echo "Running data wrangling, analysis, and modeling in R..."
 echo ""
 
-Rscript Code/Project_Analysis.R > Code/Project_Analysis.out
+Rscript Final_Exam.R > Final_Exam.out
 
 echo ""
-echo "Finished data wrangling and modeling in R."
-echo ""
-echo "#-------------------------------------------------"
-echo ""
-
-
-################################################################################
-# Build the pdf Document with LaTeX
-################################################################################
-
-echo "#-------------------------------------------------"
-echo ""
-echo "Building the pdf Document with LaTeX..."
-echo ""
-
-export PATH='/c/Program Files/texlive/2020/bin/win32'
-
-cd Papers
-
-pdflatex Paper.tex
-
-cd ..
-
-echo ""
-echo "Finished building the pdf document with LaTeX."
+echo "Finished working in R."
 echo ""
 echo "#-------------------------------------------------"
 echo ""
-
 
 ################################################################################
 # If you made it here without error, it worked.
 ################################################################################
 
-echo "Finished my Business Analytics Term Project!"
+echo "Finished my Business Analytics Final Exam!"
 echo ""
 echo "##################################################"
 

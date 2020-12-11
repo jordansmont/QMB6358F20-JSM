@@ -24,11 +24,6 @@ rm(list=ls(all=TRUE))
 
 # Libraries required:
 
-library(glmnet)
-library(ggplot2)
-library(ggpubr)
-
-
 wd_path <- "C:/Users/jorda/OneDrive/Documents/UCF/QMB6358/QMB6358F20-JSM/assignment_09"
 
 setwd(wd_path)
